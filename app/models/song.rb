@@ -3,8 +3,7 @@ class Song < ActiveRecord::Base
   belongs_to :genre
   has_many :notes
 
-  def genre_name=(id)
-     self.genre = Genre.find(id: id)
+  def genre_name=(name)
+     self.genre = Genre.find_by(name: name)
    end
 end
-
