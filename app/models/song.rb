@@ -13,7 +13,7 @@ class Song < ActiveRecord::Base
   end
 
   def genre_name
-    self.genre.name
+    self.genre.name if genre
   end
 
   def artist_name
