@@ -21,7 +21,9 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents
-    self.notes.content
+    self.notes.map do |c| 
+      c.content 
+    end 
   end
 
   def note_contents=(content)
