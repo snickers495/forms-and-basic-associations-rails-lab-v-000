@@ -27,7 +27,9 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents=(content)
-    note = Note.create(content: content)
-    self.notes << note
+    if (content != nil || content.length != 0)
+      note = Note.create(content: content)
+      self.notes << note
+    end
   end
 end
